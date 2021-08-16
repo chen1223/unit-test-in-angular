@@ -1,0 +1,61 @@
+<!-- Layout -->
+<div class="layout">
+  <!-- Page title -->
+  <h1 class="page-title">Sign Up</h1><!-- End of page title -->
+  <!-- Signup Form -->
+  <form class="signup-form" [formGroup]="registerForm" (ngSubmit)="submitForm()">
+    <!-- Username -->
+    <div class="ctrl-row --username">
+      <label for="username" class="ctrl-label">Username</label>
+      <input type="text" class="ctrl" id="username" name="username" autocomplete="off" formControlName="username">
+    </div><!-- End of username -->
+
+    <!-- Password -->
+    <div class="ctrl-row --password">
+      <label for="password" class="ctrl-label">Password</label>
+      <input type="password" class="ctrl" id="password" name="password" autocomplete="off" formControlName="password">
+    </div><!-- End of password -->
+
+    <!-- E-mail -->
+    <div class="ctrl-row --email">
+      <label for="email" class="ctrl-label">E-mail</label>
+      <input type="email" class="ctrl" id="email" name="email" autocomplete="off" formControlName="email">
+    </div><!-- End of e-mail -->
+
+    <!-- Team -->
+    <div class="ctrl-row --team">
+      <label for="team" class="ctrl-label">Team</label>
+      <select name="team" id="team" class="ctrl" formControlName="team">
+        <option class="option" value=""></option>
+        <option *ngFor="let team of teamList" class="option" [ngValue]="team.id">{{ team.name }}</option>
+      </select>
+    </div><!-- End of team -->
+
+    <!-- Gender -->
+    <div class="ctrl-row --gender">
+      <label for="gender" class="ctrl-label">Gender</label>
+      <!-- Radio gruop -->
+      <div class="radio-group ctrl">
+        <!-- Male -->
+        <div class="radio-option --male">
+          <input type="radio" class="radio-ctrl" id="male" name="gender" value="M" formControlName="gender">
+          <label for="male" class="radio-label">Male</label>
+        </div><!-- End of male -->
+        <!-- Female -->
+        <div class="radio-option --female">
+          <input type="radio" class="radio-ctrl" id="female" name="gender" value="F" formControlName="gender">
+          <label for="female" class="radio-label">Female</label>
+        </div><!-- End of female -->
+      </div><!-- End of radio group -->
+    </div><!-- End of gender -->
+
+    <!-- News Letter -->
+    <div class="ctrl-row --news-letter">
+      <input type="checkbox" class="ctrl --checkbox" id="subscription" name="subscription" formControlName="subscription">
+      <label for="subscription" class="ctrl-label --checkbox">Subscribe to News Letter</label>
+    </div><!-- End of news letter -->
+
+    <!-- Submit button -->
+    <button class="submit-btn" type="submit">Submit</button><!-- End of submit button -->
+  </form><!-- End of signup form -->
+</div><!-- End of layout -->

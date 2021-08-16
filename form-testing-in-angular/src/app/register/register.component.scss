@@ -1,0 +1,105 @@
+:host {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+}
+.layout {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/*** Page Title ***/
+.page-title {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+/*** Ctrl Row ***/
+.ctrl-row {
+  margin-bottom: 1.5rem;
+}
+/*** Ctrl Title ***/
+.ctrl-label {
+  font-size: 1rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+/*** Input Ctrl ***/
+input.ctrl {
+  border: 1px solid var(--text-color);
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 3px;
+  outline-color: var(--primary-color);
+  font-weight: 600;
+  &.ng-invalid.ng-touched {
+    border: 2px solid var(--error-color);
+  }
+}
+/*** Radio Ctrl ***/
+.radio-option {
+  display: inline-flex;
+  margin-right: 2rem;
+  align-items: center;
+  .radio-ctrl {
+    margin: 0;
+    margin-right: 5px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+  .radio-label {
+    font-weight: 600;
+  }
+}
+/*** Select Ctrl ***/
+select.ctrl {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  border: 1px solid #707070;
+  border-radius: 3px;
+  &.ng-invalid.ng-touched {
+    border: 2px solid var(--error-color);
+  }
+  .option {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
+/*** Checkbox Ctrl ***/
+.ctrl.--checkbox {
+  margin: 0;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 1px;
+  cursor: pointer;
+}
+.ctrl-label.--checkbox {
+  display: inline;
+  margin: 0;
+}
+.--news-letter {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+/*** Button ***/
+.submit-btn {
+  background: var(--primary-color);
+  color: white;
+  border-radius: 3px;
+  width: 100%;
+  font-weight: 700;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
