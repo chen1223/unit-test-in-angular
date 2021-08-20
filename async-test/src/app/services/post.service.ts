@@ -15,7 +15,7 @@ export interface Author {
   name: string;
 }
 
-const AUTHOR_LIST = [
+export const AUTHOR_LIST = [
   {
     id: 1,
     name: 'Kyan Adkins'

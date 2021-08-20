@@ -3,11 +3,10 @@ import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FontAwesomeModule, FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { FontawesomeObject } from '@fortawesome/fontawesome-svg-core';
 
 import { HeaderComponent } from './header.component';
 
-fdescribe('HeaderComponent', () => {
+describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let router: Router;
@@ -28,7 +27,7 @@ fdescribe('HeaderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
-    router = TestBed.get(Router);
+    router = TestBed.inject(Router);
     fixture.detectChanges();
   });
 
@@ -101,7 +100,37 @@ fdescribe('HeaderComponent', () => {
 
   // #region newPost related tests
   it('should navigate to the new-post page when newPost is called', () => {
-    // const fnc = spyOn()
+    // Arrange
+    const fnc = spyOn(router, 'navigateByUrl');
+
+    // Act
+    component.newPost();
+
+    // Assert
+    expect(fnc).toHaveBeenCalled();
+  });
+  // #endregion
+
+  // #region onNewPostPage related tests
+  it('should return true if current url contains new-post', () => {
+    // Arrange
+    spyOnProperty(router, 'url').and.returnValue('/new-post');
+
+    // Act
+    const result = component.onNewPostPage();
+
+    // Assert
+    expect(result).toBeTruthy();
+  });
+  it('should return false if current url does not contains new-post', () => {
+    // Arrange
+    spyOnProperty(router, 'url').and.returnValue('/home');
+
+    // Act
+    const result = component.onNewPostPage();
+
+    // Assert
+    expect(result).toBeFalsy();
   });
   // #endregion
 });

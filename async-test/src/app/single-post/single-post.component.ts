@@ -50,7 +50,7 @@ export class SinglePostComponent implements OnInit {
   }
 
   editPost(): void {
-    if (window.confirm('Are you sure you want to eidt this post?')) {
+    if (window.confirm('Are you sure you want to edit this post?')) {
       this.router.navigateByUrl(`/post/${this.postId}/update`);
     }
   }
@@ -59,7 +59,7 @@ export class SinglePostComponent implements OnInit {
     if (window.confirm('Are you sure you want to delete this post?')) {
       this.postService.deletePost(this.postId).subscribe(
         () => {
-          window.alert('Post deleted successfully');
+          window.alert('Post deleted successfully!');
           this.router.navigateByUrl('');
         },
         err => {

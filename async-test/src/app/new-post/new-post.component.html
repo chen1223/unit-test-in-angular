@@ -7,13 +7,13 @@
 <section class="new-post">
   <form [formGroup]="postForm" (ngSubmit)="submitForm()">
     <!-- Title row -->
-    <div class="ctrl-row">
+    <div class="ctrl-row --title">
       <label for="title" class="ctrl-title">Title</label>
       <input id="title" type="text" class="ctrl" name="title" autocomplete="off" formControlName="title">
     </div><!-- End of title row -->
 
     <!-- Post row -->
-    <div class="ctrl-row">
+    <div class="ctrl-row --post">
       <label for="post" class="ctrl-title">Post</label>
       <textarea id="post" name="post" cols="30" rows="12" class="ctrl" autocomplete="off" formControlName="body"></textarea>
     </div><!-- End of post row -->
