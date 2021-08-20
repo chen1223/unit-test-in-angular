@@ -1,0 +1,71 @@
+@import '../shared/variable.scss';
+
+.page-title {
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new-post {
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*** Ctrl row styleing ***/
+.ctrl-row {
+  width: 100%;
+  margin-bottom: 2rem;
+  .ctrl-title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .ctrl {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border: none;
+    outline: 1px solid var(--outline-color);
+    &.active {
+      border: none;
+    }
+    &.ng-invalid.ng-touched {
+      border: 2px solid var(--error-color);
+      outline: none;
+    }
+  }
+  textarea {
+    resize: none;
+  }
+}
+
+
+/*** Action row styling ***/
+.action-row {
+  text-align: right;
+  .action-btn {
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 0.25rem 1rem;
+    font-size: 1.2rem;
+    width: 150px;
+    margin-left: 1rem;
+    &.--save {
+      background: var(--primary-color);
+    }
+    &.--cancel {
+      background: var(--sub-color);
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  .page-title,
+  .new-post {
+    width: 100%;
+  }
+}

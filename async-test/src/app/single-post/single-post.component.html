@@ -1,0 +1,21 @@
+<h1 class="page-title">{{ post?.title }}</h1>
+<!-- Meta row -->
+<div class="meta-row">
+  <span class="author">
+    <fa-icon class="avatar" [icon]="userIcon"></fa-icon>
+    <span class="name">{{ post?.userName }}</span>
+  </span>
+  <!-- Action buttons -->
+  <div class="action-btns">
+    <button class="action-btn --edit" type="button" role="button" aria-label="edit" (click)="editPost()">
+      <fa-icon [icon]="pencilIcon"></fa-icon>
+    </button>
+    <button class="action-btn --delete" type="button" role="button" aria-label="delete" (click)="deletePost()">
+      <fa-icon [icon]="deleteIcon"></fa-icon>
+    </button>
+  </div><!-- End of action buttons -->
+</div><!-- End of meta row -->
+<!-- Post detail -->
+<section class="post-detail">
+  <p class="post">{{ post?.body }}</p>
+</section><!-- End of post detail -->

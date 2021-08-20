@@ -1,0 +1,11 @@
+<!-- Header wrapper -->
+<div class="header-wrapper">
+  <!-- Home link -->
+  <a routerLink="" class="home-link">
+    <fa-icon [icon]="homeIcon"></fa-icon>
+    Home
+  </a><!-- End of home link -->
+
+  <!-- New Post Button -->
+  <button *ngIf="!onNewPostPage()" class="new-post" type="button" role="button" (click)="newPost()">New Post</button><!-- End of new post button -->
+</div><!-- End of header wrapper -->

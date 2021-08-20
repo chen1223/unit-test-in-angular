@@ -1,0 +1,18 @@
+<h1 class="page-title">Latest Posts</h1>
+<section class="post-section">
+  <!-- Post list -->
+  <ul class="post-list">
+    <li class="post" *ngFor="let post of posts">
+      <h3 class="post__title">{{ post.title }}</h3>
+      <!-- Post body -->
+      <div class="post__body">
+        <!-- Post Detail -->
+        <div class="post__detail">
+          <p class="post__preview">{{ post.body }}</p>
+          <a [routerLink]="['post', post.id]" class="more-link">read more</a>
+        </div><!-- End of post detail -->
+        <span class="author">- {{ post.userName }}</span>
+      </div><!-- End of post body -->
+    </li>
+  </ul><!-- End of post list -->
+</section>

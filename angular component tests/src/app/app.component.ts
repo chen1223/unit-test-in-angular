@@ -41,6 +41,6 @@ export class AppComponent {
    * Determine if a Person can drink alcohol
    */
   canDrinkAlcohol(age: number): boolean {
-    return age >=18;
+    return age >= 18;
   }
 }

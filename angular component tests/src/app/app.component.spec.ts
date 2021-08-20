@@ -116,7 +116,7 @@ describe('AppComponent', () => {
 
   it('should return the favorite drink of the person is exist when serveDrink is called', () => {
     // Arrange
-    const favoriteDrink = 'Apple Juice'
+    const favoriteDrink = 'Apple Juice';
     const testPerson: Person = {
       age: 17,
       favoriteDrink

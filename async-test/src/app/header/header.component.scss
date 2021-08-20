@@ -1,0 +1,23 @@
+@import '../shared/variable.scss';
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+.home-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.new-post {
+  background: var(--primary-color);
+  color: white;
+  margin-left: auto;
+  font-size: 1.2rem;
+  border: none;
+  padding: 0.25rem 1rem;
+  font-weight: 500;
+  min-width: 150px;
+  cursor: pointer;
+}

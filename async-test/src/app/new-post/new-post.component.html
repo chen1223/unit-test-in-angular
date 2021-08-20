@@ -1,0 +1,27 @@
+<h1 class="page-title" *ngIf="mode === 'create';else updateTitle">New Post</h1>
+<ng-template #updateTitle>
+  <h1 class="page-title">Update Post</h1>
+</ng-template>
+
+<!-- Form section -->
+<section class="new-post">
+  <form [formGroup]="postForm" (ngSubmit)="submitForm()">
+    <!-- Title row -->
+    <div class="ctrl-row">
+      <label for="title" class="ctrl-title">Title</label>
+      <input id="title" type="text" class="ctrl" name="title" autocomplete="off" formControlName="title">
+    </div><!-- End of title row -->
+
+    <!-- Post row -->
+    <div class="ctrl-row">
+      <label for="post" class="ctrl-title">Post</label>
+      <textarea id="post" name="post" cols="30" rows="12" class="ctrl" autocomplete="off" formControlName="body"></textarea>
+    </div><!-- End of post row -->
+
+    <!-- Action row -->
+    <div class="action-row">
+      <button class="action-btn --save" type="submit" role="submit">Save</button>
+      <button class="action-btn --cancel" type="button" role="button" (click)="cancel()">Cancel</button>
+    </div><!-- End of action row -->
+  </form>
+</section><!-- End of new post section -->

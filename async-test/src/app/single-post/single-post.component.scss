@@ -1,0 +1,31 @@
+/*** Meta Row Styling ***/
+.meta-row {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+.author {
+  display: flex;
+  align-items: center;
+  .avatar {
+    font-size: 1.2rem;
+  }
+  .name {
+    font-size: 0.9rem;
+    margin-left: 5px;
+  }
+}
+.action-btns {
+  margin-left: auto;
+  .action-btn {
+    font-size: 1rem;
+    margin: 0 1rem;
+    border: none;
+    cursor: pointer;
+  }
+}
+/*** Post Styling ***/
+.post {
+  white-space: pre;
+  font-size: 1rem;
+}

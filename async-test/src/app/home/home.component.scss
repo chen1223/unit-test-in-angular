@@ -1,0 +1,54 @@
+@import '../shared/variable.scss';
+
+/*** Post styling ***/
+.post-list {
+  list-style: none;
+  padding: 0;
+  .post {
+    background: var(--post-bg-color);
+    padding: 2rem;
+    max-width: var(--max-post-width);
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  }
+}
+.post__title {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+.post__body {
+  display: flex;
+  align-items: center;
+  .post__preview {
+    display: inline;
+  }
+  .post__detail {
+    flex: 4;
+  }
+  .author {
+    flex: 1;
+    margin-left: 2rem;
+    white-space: nowrap;
+  }
+  .more-link {
+    margin-left: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    &::after {
+      content: '...';
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  .post__body {
+    display: block;
+    .author {
+      display: block;
+      margin-left: 1rem;
+      margin-top: 1rem;
+    }
+  }
+}
