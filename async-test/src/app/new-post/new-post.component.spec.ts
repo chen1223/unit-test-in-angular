@@ -380,7 +380,7 @@ describe('NewPostComponent', () => {
     // Assert
     expect(fnc).toHaveBeenCalled();
   });
-  it('should set userName for the post data returned by getSinglePost', fakeAsync(() => {
+  it('should set userName for the post data and update form with data returned by getSinglePost', () => {
     // Arrange
     const dummyAuthor = 'Tim';
     const dummyData = {
@@ -399,7 +399,7 @@ describe('NewPostComponent', () => {
     // Assert
     dummyData['userName'] = dummyAuthor;
     expect(fnc).toHaveBeenCalledWith(dummyData);
-  }));
+  });
   it('should log error when getPostDetail is called but API returns error', fakeAsync(() => {
     // Arrange
     const dummyUrl = '123';

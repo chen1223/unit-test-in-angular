@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { componentFactoryName } from '@angular/compiler';
 import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick, flush } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -63,7 +62,7 @@ describe('SinglePostComponent', () => {
     fixture.detectChanges();
   });
 
-  // HTML related tests
+  // #region HTML related tests
   it('should have a h1 element with class page-title on the HTML', () => {
     // Arrange
     const dummyPost = {
