@@ -381,17 +381,23 @@ describe('SinglePostComponent', () => {
   it('should show error message when deletePost is called and API returns error', fakeAsync(() => {
     // Arrange
     const dummyUrl = '123';
+    const dummyId = '1';
+    component.postId = dummyId;
+    fixture.detectChanges();
     spyOn(postService, 'deletePost').and.callFake(() => http.delete<void>(dummyUrl));
-    const fnc = spyOn(console, 'error');
+    const fnc = spyOn(console, 'error').and.callThrough();
     spyOn(window, 'confirm').and.returnValue(true);
 
     // Act
     component.deletePost();
     const req = httpMock.expectOne(dummyUrl);
-    req.flush(null, { status: 400, statusText: 'Error' });
+    const status = 400;
+    const statusText = 'Deletion Failed';
+    const errBody = { postId: dummyId };
+    req.flush(errBody, { status, statusText });
 
     // Assert
-    expect(fnc).toHaveBeenCalled();
+    expect(fnc).toHaveBeenCalledWith('Post deletion error! Status:', status, ' Status text:', statusText, 'Body:', errBody);
   }));
   // #endregion
 

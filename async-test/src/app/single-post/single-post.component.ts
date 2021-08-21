@@ -63,7 +63,7 @@ export class SinglePostComponent implements OnInit {
           this.router.navigateByUrl('');
         },
         err => {
-          console.error('Post deletion error!', err);
+          console.error('Post deletion error! Status:', err.status, ' Status text:', err.statusText, 'Body:', err.error);
         }
       );
     }
